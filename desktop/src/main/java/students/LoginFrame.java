@@ -8,9 +8,6 @@ import javax.swing.border.Border;
 
 public class LoginFrame extends JDialog implements ActionListener {
 
-    private String username;
-    private String password;
-    private String hostname;
     private MainFrame mainFrame;
     JTextField field_username = null;
     JPasswordField field_password = null;
@@ -18,7 +15,7 @@ public class LoginFrame extends JDialog implements ActionListener {
     public LoginFrame(MainFrame mainFrame)  throws IOException {
 
         super(mainFrame, true);
-
+        this.mainFrame = mainFrame;
         setTitle("Login");
         setBounds(300, 300, 480, 235);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,7 +58,7 @@ public class LoginFrame extends JDialog implements ActionListener {
         field_host.setBounds(115, 85, 300, 25);
         String hostname = Configuration.getConfiguration().getHostname();
         if (hostname == null) {
-            hostname = "localhost";
+            hostname = "localhost:8081";
         }
         field_host.setText(hostname);
         mainPanel.add(host);
@@ -74,28 +71,8 @@ public class LoginFrame extends JDialog implements ActionListener {
         button_login.setEnabled(true);
         mainPanel.add(button_login);
 
-        JButton button_cancel = new JButton("Cancel");
-        button_cancel.setActionCommand("Cancel");
-        button_cancel.addActionListener(this);
-        button_cancel.setBounds(225, 125, 200, 25);
-        button_cancel.setEnabled(true);
-        mainPanel.add(button_cancel);
-
         setVisible(true);
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getHostname() {
-        return hostname;
-    }
-
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == null) {
@@ -103,12 +80,30 @@ public class LoginFrame extends JDialog implements ActionListener {
             return;
         }
         if (e.getActionCommand().equals("Login")) {
-            username = new String(this.field_username.getText());
-            password = new String(this.field_password.getText());
-            hostname = new String(this.field_host.getText());
-            this.dispose();
+            String username = this.field_username.getText();
+            String password = this.field_password.getText();
+            String hostname = this.field_host.getText();
+            boolean result = false;
+            try {
+                result = RestApiClient.getClient().checkLogin(username, password, hostname);
+            } catch (Exception ex) {
+                SimpleDialogWindow dw = new SimpleDialogWindow( mainFrame, "Connection error",
+                        ex.getMessage(), true, false, false, false);
+                return;
+            }
+            if (result) {
+                Configuration.getConfiguration().setUsername(username);
+                Configuration.getConfiguration().setHostname(hostname);
+                setModal(true);
+                this.dispose();
+            }
+            else {
+                SimpleDialogWindow dw = new SimpleDialogWindow( mainFrame, "Connection error",
+                        "Wrong username or password. Try again.", true, false, false, false);
+            }
         }
         if (e.getActionCommand().equals("Cancel")) {
+            setModal(true);
             this.dispose();
         }
     }

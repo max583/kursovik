@@ -7,9 +7,6 @@ import java.io.IOException;
 import javax.swing.border.Border;
 
 public class MainFrame extends JFrame implements ActionListener {
-    private String current_username = "";
-    private String current_password = "";
-    private String current_hostname = "";
     public MainFrame() throws IOException {
         setTitle("Students " + Configuration.getConfiguration().getAppVersion().toString());
         setBounds(300, 90, 480, 600);
@@ -39,18 +36,21 @@ public class MainFrame extends JFrame implements ActionListener {
         button_add_user.setActionCommand("Add_user");
         button_add_user.addActionListener(this);
         button_add_user.setBounds(225, 25, 200, 25);
+        button_add_user.setEnabled(false);
         mainPanel.add(button_add_user);
 
         JButton button_remove_user = new JButton("Remove user");
         button_remove_user.setActionCommand("Remove_user");
         button_remove_user.addActionListener(this);
         button_remove_user.setBounds(225, 55, 200, 25);
+        button_remove_user.setEnabled(false);
         mainPanel.add(button_remove_user);
 
         JButton button_edit_user = new JButton("Edit user roles");
         button_edit_user.setActionCommand("Edit_user_roles");
         button_edit_user.addActionListener(this);
         button_edit_user.setBounds(225, 85, 200, 25);
+        button_edit_user.setEnabled(false);
         mainPanel.add(button_edit_user);
 
         JButton button_logout = new JButton("Logout");
@@ -61,13 +61,13 @@ public class MainFrame extends JFrame implements ActionListener {
         mainPanel.add(button_logout);
 
         LoginFrame login_frame = new LoginFrame(this);
-        current_username = login_frame.getUsername();
-        current_password = login_frame.getPassword();
-        current_hostname = login_frame.getHostname();
-        System.out.println("LoginFrame: " + current_username + " " + current_password + " " + current_hostname);
 
-        if (current_username == null || current_password == null || current_hostname == null
-                || current_hostname.length() == 0 || current_username.length() == 0 || current_password.length() == 0) {
+
+        String current_username = Configuration.getConfiguration().getUsername();
+        String current_hostname = Configuration.getConfiguration().getHostname();
+        System.out.println("LoginFrame: " + current_username + " " + current_hostname);
+        if (current_username == null || current_hostname == null
+                || current_hostname.length() == 0 || current_username.length() == 0 ) {
             System.exit(0);
         }
 

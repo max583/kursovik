@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="579d1f1c-7245-46d3-8214-e4a250878619" name="Changes" comment="Create UI" />
+    <list default="true" id="579d1f1c-7245-46d3-8214-e4a250878619" name="Changes" comment="Create UI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/students/RestApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/students/SimpleDialogWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/server/server/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/server/server/db/DB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/java/server/server/ServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/students/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/students/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/students/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/students/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/students/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/students/MainFrame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,18 +43,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/nick/components-DialogDemoProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/nick/kursovik/backend/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Students" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="students.Students" />
+      <module name="swingProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +80,9 @@
       <workItem from="1703411317251" duration="6000" />
       <workItem from="1703411330554" duration="1908000" />
       <workItem from="1703416208809" duration="8718000" />
+      <workItem from="1703426908143" duration="42000" />
+      <workItem from="1703426961696" duration="7273000" />
+      <workItem from="1703442668026" duration="243000" />
     </task>
     <servers />
   </component>
