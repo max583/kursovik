@@ -19,7 +19,7 @@ public class Configuration extends ClassLoader {
         this.username = properties.getProperty("username");
     }
 
-    public static Configuration getConfiguration() throws IOException {
+    public static Configuration getConfiguration(){
         if (INSTANCE == null) {
             try {
                 INSTANCE = new Configuration();
@@ -40,5 +40,13 @@ public class Configuration extends ClassLoader {
 
     public String getUsername() {
         return this.username;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
